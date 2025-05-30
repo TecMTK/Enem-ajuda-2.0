@@ -1,0 +1,169 @@
+:root {
+  --azul: #0707fd;
+  --fundo: #0d0d0d;
+  --painel: #1e293b;
+  --texto: #e2e8f0;
+  --linha: #ffffff;
+  --borda: #475569;
+  --destaque: #38bdf8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--fundo);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  color: var(--texto);
+}
+
+.folha {
+  background: var(--painel);
+  width: 800px;
+  min-height: 1100px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  position: relative;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--destaque);
+  margin-bottom: 20px;
+}
+
+.linha-fundo {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  right: 40px;
+  bottom: 80px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--linha),
+    var(--linha) 1px,
+    transparent 1px,
+    transparent 25px
+  );
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.editor {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  right: 40px;
+  bottom: 80px;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--texto);
+  overflow-y: auto;
+  outline: none;
+  border: 2px solid var(--borda);
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.editor:empty:before {
+  content: "Digite sua redação aqui...";
+  color: #94a3b8;
+}
+
+.caracteres {
+  position: absolute;
+  bottom: 45px;
+  right: 50px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.botoes {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  display: flex;
+  gap: 10px;
+}
+
+.botoes button {
+  background-color: var(--destaque);
+  color: #0f172a;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botoes button:hover {
+  background-color: #0ea5e9;
+}
+
+.painel {
+  width: 320px;
+  background: var(--painel);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  height: fit-content;
+}
+
+.painel h2 {
+  font-size: 20px;
+  color: var(--destaque);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.temas {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+}
+
+.temas li {
+  margin-bottom: 12px;
+  background-color: #334155;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 4px solid var(--destaque);
+}
+
+.painel button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: var(--destaque);
+  color: #0f172a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.painel button:hover {
+  background-color: #0ea5e9;
+}
+
+#resultado-correcao {
+  position: relative;
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--texto);
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redação ENEM - Simulador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="painel">
+    <h2>Tema do dia</h2>
+    <ul class="temas" id="lista-temas"></ul>
+    <button onclick="sortearTema()">Novo Tema</button>
+  </div>
+
+  <div class="folha">
+    <div class="titulo">Folha de Redação - ENEM (Simulador)</div>
+    <div class="linha-fundo"></div>
+    <div class="editor" contenteditable="true" oninput="contarCaracteres()" id="editor"></div>
+    <div class="caracteres" id="contador">0 / 3000 caracteres</div>
+    <div class="botoes">
+      <button onclick="salvarRedacao()">Salvar</button>
+      <button onclick="corrigirRedacao()">Corrigir</button>
+    </div>
+    <div id="resultado-correcao"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
